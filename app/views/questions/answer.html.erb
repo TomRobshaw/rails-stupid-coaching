@@ -1,8 +1,13 @@
-<h2> <%= @question %> </h2>
-<% if @question == "I am going to work"%>
-  <h4>Great<h4>
-<% elsif @question[-1] == "?" %>
-  <h4>"Silly question, get dressed and go to work!"</h4>
-<% else%>
-  <h4>"I don't care, get dressed and go to work!"</h4>
-<% end %>
+
+<h2>
+  <% if @question.blank?%>
+    I can't hear you!
+    <% else %>
+    <%= @question %>
+  <% end %>
+</h2>
+
+<h1>Coach says:</h1>
+<h2><%= @answer %></h2>
+
+<%= link_to "Ask a new question", ask_path %>
